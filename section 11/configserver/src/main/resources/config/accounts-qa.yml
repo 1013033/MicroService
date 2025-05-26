@@ -1,0 +1,14 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+build:
+  version: 1.0
+accounts:
+  message: "Welcome to AaronyBank accounts related QA APIs "
+  contactDetails:
+    name: "Aaron Huang - QA Developer"
+    email: "aaron@neux.com"
+  onCallSupport:
+    - (555) 555-1234
+    - (555) 523-1345
