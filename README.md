@@ -1,3 +1,4 @@
+<pre> ```mermaid
 sequenceDiagram
     autonumber
     participant Client
@@ -31,3 +32,4 @@ sequenceDiagram
 
     %% === 後續 Flow ===
     Note over EmailFunction, SmsFunction: 可改送實際 Email/SMS 或<br>後續服務消費
+``` </pre>
