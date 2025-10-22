@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: "configserver"
+  profiles:
+    # active: native
+    active: git
+  cloud:
+    config:
+      server:
+        # native:
+          # search-locations: "classpath:/config"
+          # search-locations: "file:///Users//eazybytes//Documents//config"
+        git:
+          uri: "https://github.com/1013033/MicroServiceConfig.git"
+          username: "1013033"
+          password: "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"
+          default-label: main
+#          uri: "https://gitlab.dgbas.gov.tw/aaron-group/aaronprojectconfig.git"
+#          skipSslValidation: true   # GitLab 伺服器可能使用自簽或內部機構簽發的 HTTPS 憑證，Java 預設不信任此憑證，導致 SSL 驗證失敗
+#          username: "oauth2"
+#          password: "glpat-omYWzpz7JIIIbqYM2GSG6W86MQp1OjkH.01.0w1qsyfu1"
+#          default-label: master
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+#  rabbitmq:
+#    host: "localhost"
+#    port: 5672
+#    username: "guest"
+#    password: "guest"
+logging:
+  pattern:
+    console: "%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+encrypt:
+  key: "45D81EC1EF61DF9AD8D3E5BB397F9"
+
+server:
+  port: 8071
